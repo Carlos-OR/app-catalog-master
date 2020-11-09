@@ -1,0 +1,8 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div class="col-lg-3 my-4">
+    <h2 class="my-3">Sistemas Operativos</h2>
+    <div class="list-group" th:each="sistemasOperativo : ${@appContextComponent.findAllSistemaOperativo()}">
+        <a th:href="@{/inicio(idSistemaOperativo=${sistemasOperativo.id})}" class="list-group-item" th:text="${sistemasOperativo.nombre}"></a>
+    </div>
+</div>

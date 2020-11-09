@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Inicio</title>
+
+    <div th:replace="/component/meta.html"></div>
+    <div th:replace="/component/style.html"></div>
+</head>
+<body>
+
+    <div th:replace="/component/nav.html"></div>
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div th:replace="/component/sistemas_operativos_list.html"></div>
+
+            <div class="col-lg-9 my-4">
+                <div class="row mt-4">
+                    <div class="col-lg-4 col-md-6 mb-4" th:each="aplicacion : ${aplicaciones}">
+                        <div th:replace="/component/item_aplicacion.html(aplicacion=${aplicacion})"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="/component/script_body.html"></div>
+    <div th:replace="/component/footer.html"></div>
+
+</body>
+</html>

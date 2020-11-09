@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Subir Aplicacion</title>
+
+    <div th:replace="/component/meta.html"></div>
+    <div th:replace="/component/style.html"></div>
+</head>
+<body>
+    <div th:replace="/component/nav.html"></div>
+
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+        <div class="card rounded" style="width: 30%; min-width: 500px">
+            <div class="bg-dark text-center color-white">
+                <h2 class="py-4 text-white">Registrar</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" th:action="@{/usuario/guardar}" th:object="${usuario}">
+                    <div class="mb-3">
+                        <input th:field="*{nombre}" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <input th:field="*{clave}" type="text" class="form-control" id="clave" placeholder="Clave">
+                    </div>
+                    <div class="mb-3">
+                        <input th:field="*{apellido}" type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input th:field="*{correo}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input th:field="*{descripcion}" type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-secondary" style="width: 100%">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="/component/script_body.html"></div>
+    <div th:replace="/component/footer.html"></div>
+</body>
+</html>
